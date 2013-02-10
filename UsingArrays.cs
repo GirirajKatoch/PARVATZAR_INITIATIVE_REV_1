@@ -33,7 +33,7 @@ namespace UsingArray
             IEnumerator enumerator = doubleValues.GetEnumerator();
             while (enumerator.MoveNext())
                 Console.WriteLine(enumerator.Current + " ");
-            Console.WriteLine("\ninteValues:  ");
+            Console.WriteLine("\nintValues:  ");
             //iterate through an int with an enumerator
             enumerator = intValues.GetEnumerator();
             while (enumerator.MoveNext())
