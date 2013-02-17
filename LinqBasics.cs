@@ -17,6 +17,10 @@ namespace LINQWithSimpleTypeArray
                 Console.WriteLine(" {0}", element);
             // LINQ query that obtains value greater than 4 from array
             var filtered =
+            /*We do not specify the range variable’s type (here value is the range variable). Since it is assigned one 
+            element at a time from the array values, which is an int array, the compiler determines that the range 
+            variable value should be of type int. This is a C# feature called implicitly typed local variables, 
+            which enables the compiler to infer a local variable’s type based on the context in which it’s used.*/
                 from  value in values
                 where value > 4
                 select value;
