@@ -34,7 +34,7 @@ namespace UsingArray
             while (enumerator.MoveNext())
                 Console.WriteLine(enumerator.Current + " ");
             Console.WriteLine("\nintValues:  ");
-            //iterate through an int with an enumerator
+            //iterate through an int array with an enumerator
             enumerator = intValues.GetEnumerator();
             while (enumerator.MoveNext())
                 Console.WriteLine(enumerator.Current + " ");
