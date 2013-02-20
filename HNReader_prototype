@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.ServiceModel.Syndication;
+namespace RssFeedViewer_prototype
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void getRssFeed_Click(object sender, EventArgs e)
+        {
+            string url = "https://news.ycombinator.com/rss";
+           // XmlDocument xdoc = new XmlDocument();
+            XmlReader xmlr = XmlReader.Create(url);
+            SyndicationFeed feed = SyndicationFeed.Load(xmlr);
+            xmlr.Close();
+            var items = new List<ListViewItem>();
+            foreach (var item in feed.Items)
+            {
+                //foreach (SyndicationElementExtension extension in item.ElementExtensions)
+                //{
+                    //XmlElement ele = extension.GetObject<XmlElement>();
+                    //RssViewSpace.Text = RssViewSpace.Text + "\n" + ele.Value;
+                var listItem = new ListViewItem();
+                listItem.Text = RssViewSpace.Text;
+                RssViewSpace.Text = RssViewSpace.Text + System.Environment.NewLine + item.Title.Text + 
+                System.Environment.NewLine;
+                RssViewSpace.Text = RssViewSpace.Text + System.Environment.NewLine + item.Summary.Text 
+                + System.Environment.NewLine;
+                
+                //}
+               // RssViewSpace.Text = item.Summary.Text;
+
+            }
+        }
+    }
+}
