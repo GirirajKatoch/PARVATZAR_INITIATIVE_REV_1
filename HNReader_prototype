@@ -40,7 +40,7 @@ namespace RssFeedViewer_prototype
                 + System.Environment.NewLine;
                 
                 //}
-               // RssViewSpace.Text = item.Summary.Text;
+               // RssViewSpace.Text = item.Summary.Text; //This is a comment added by me on June 26 2013
 
             }
         }
